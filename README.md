@@ -3,7 +3,7 @@
 nlist = [2, 3, 5, 6, 7, 12, 90, 99, 100, 120]
 
 found = False
-search_term = 100
+search_term = int(input("Enter a integer number"))
 
 # First and last pointers
 first = 0
