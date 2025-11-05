@@ -1,9 +1,7 @@
-#binary search
-
 nlist = [2, 3, 5, 6, 7, 12, 90, 99, 100, 120]
 
 found = False
-search_term = int(input("Enter a integer number"))
+search_term = int(input("Enter an integer number: "))
 
 # First and last pointers
 first = 0
@@ -14,6 +12,7 @@ while found == False and last >= first:
 
     if search_term == nlist[mid]:
         found = True
+        print(f"Found data at position {mid}")  # Print the position
         break
     else:
         if search_term > nlist[mid]:
@@ -22,6 +21,7 @@ while found == False and last >= first:
             last = mid - 1
 
 if found == True:
-    print("Found data item")
+    # Position was already printed when found, no need to repeat here.
+    pass
 else:
     print("Not Found data item")
