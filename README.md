@@ -1,5 +1,5 @@
-nlist = [2, 3, 5, 6, 7, 12, 90, 99, 100, 120]
-
+nlist = [3, 7, 12, 18, 24, 29, 35, 41, 47, 53, 58, 64, 70]
+comparisons = 0
 found = False
 search_term = int(input("Enter an integer number: "))
 
@@ -9,19 +9,17 @@ last = len(nlist) - 1
 
 while found == False and last >= first:
     mid = (first + last) // 2
+    comparisons += 1
 
     if search_term == nlist[mid]:
         found = True
-        print(f"Found data at position {mid}")  # Print the position
+        print(f"Found data at position {mid} used {comparisons} comparisons to find it")  # Print the position
         break
     else:
         if search_term > nlist[mid]:
             first = mid + 1
+          
         elif search_term < nlist[mid]:
             last = mid - 1
-
-if found == True:
-    # Position was already printed when found, no need to repeat here.
-    pass
 else:
     print("Not Found data item")
